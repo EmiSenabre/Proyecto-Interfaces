@@ -30,7 +30,7 @@ namespace Proyecto_Interfaces
 
             NpgsqlConnection con = new NpgsqlConnection(builder.ToString());
             NpgsqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "insert into usuarios(nombre,contraseña) values (" + txtNombre.Text + "," + txtContraseña.Text + ")";
+            cmd.CommandText = "insert into usuarios(nombre,contraseña) values ('" + txtNombre.Text + "','" + txtContraseña.Text + "')";
             con.Open();
             cmd.ExecuteNonQuery();
 
