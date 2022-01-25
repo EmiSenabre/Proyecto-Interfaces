@@ -76,6 +76,7 @@
             this.btnLogearse.TabIndex = 4;
             this.btnLogearse.Text = "Iniciar Sesión";
             this.btnLogearse.UseVisualStyleBackColor = true;
+            this.btnLogearse.Click += new System.EventHandler(this.btnLogearse_Click);
             // 
             // btnRegistarse
             // 

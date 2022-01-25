@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Npgsql;
+using MySql.Data.MySqlClient;
 
 namespace Proyecto_Interfaces
 {
@@ -21,7 +22,22 @@ namespace Proyecto_Interfaces
 
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
-            NpgsqlConnectionStringBuilder builder = new NpgsqlConnectionStringBuilder();
+
+            MySqlConnection con = Conexion.getConexion();
+            con.Open();
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "insert into usuarios(nombre,contraseña) values ('" + txtNombre.Text + "','" + txtContraseña.Text + "')";
+            cmd.ExecuteNonQuery();
+
+            txtContraseña.Text = "";
+            txtNombre.Text = "";
+            
+
+        }
+
+        private void btnLogearse_Click(object sender, EventArgs e)
+        {
+          /*  NpgsqlConnectionStringBuilder builder = new NpgsqlConnectionStringBuilder();
             builder.Host = "localhost";
             builder.Username = "postgres";
             builder.Password = "alumno";
@@ -30,10 +46,12 @@ namespace Proyecto_Interfaces
 
             NpgsqlConnection con = new NpgsqlConnection(builder.ToString());
             NpgsqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "insert into usuarios(nombre,contraseña) values ('" + txtNombre.Text + "','" + txtContraseña.Text + "')";
+            cmd.CommandText = "from usuarios";
             con.Open();
             cmd.ExecuteNonQuery();
 
+            txtContraseña.Text = "";
+            txtNombre.Text = "";*/
         }
     }
 }
