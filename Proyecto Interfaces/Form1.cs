@@ -22,16 +22,9 @@ namespace Proyecto_Interfaces
 
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
-
-            MySqlConnection con = Conexion.getConexion();
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "insert into usuarios(nombre,contraseña) values ('" + txtNombre.Text + "','" + txtContraseña.Text + "')";
-            cmd.ExecuteNonQuery();
-
-            txtContraseña.Text = "";
-            txtNombre.Text = "";
             
+            Registrar registra = new Registrar();
+            registra.ShowDialog();
 
         }
 

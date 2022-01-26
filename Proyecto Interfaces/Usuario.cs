@@ -8,8 +8,9 @@ namespace Proyecto_Interfaces
 {
     internal class Usuario
     {
-        string nombre, contraseña;
+        string nombre, contraseña, confirmarCon;
         public string Nombre { get => nombre; set => nombre = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
+        public string ConfirmarCon { get => confirmarCon; set => confirmarCon = value; }
     }
 }
