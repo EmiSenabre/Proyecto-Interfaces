@@ -30,21 +30,27 @@ namespace Proyecto_Interfaces
 
         private void btnLogearse_Click(object sender, EventArgs e)
         {
-          /*  NpgsqlConnectionStringBuilder builder = new NpgsqlConnectionStringBuilder();
-            builder.Host = "localhost";
-            builder.Username = "postgres";
-            builder.Password = "alumno";
-            builder.Database = "autobuses";
-            builder.Port = 5433;
+            string nombre = txtNombre.Text;
+            string contraseña = txtContraseña.Text;
 
-            NpgsqlConnection con = new NpgsqlConnection(builder.ToString());
-            NpgsqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "from usuarios";
-            con.Open();
-            cmd.ExecuteNonQuery();
-
-            txtContraseña.Text = "";
-            txtNombre.Text = "";*/
+            try
+            {
+                Control control = new Control();
+                string respuesta = control.ctrlLogin(nombre,contraseña);
+                if(respuesta.Length > 0)
+                {
+                    MessageBox.Show(respuesta,"Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    Inicio inicio = new Inicio();
+                    inicio.Visible = true;
+                    this.Visible = false;
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message,"Aviso", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
     }
 }

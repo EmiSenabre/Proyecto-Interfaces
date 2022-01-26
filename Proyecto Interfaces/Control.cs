@@ -37,5 +37,33 @@ namespace Proyecto_Interfaces
             }
             return respuesta;
         }
+        public string ctrlLogin(string nombre, string contraseña)
+        {
+            Modelo modelo = new Modelo();
+            string respuesta = "";
+            Usuario datosUsuario = null;
+
+            if(string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(contraseña))
+            {
+                respuesta = "Debe llenar todos los campos";
+            }
+            else
+            {
+                datosUsuario = modelo.porUsuario(nombre);
+
+                if(datosUsuario == null)
+                {
+                    respuesta = "El usuario no existe";
+                }
+                else
+                {
+                    if (datosUsuario.Contraseña != contraseña)
+                    {
+                        respuesta = "El usuaro y/o contraseña no coinciden";
+                    }
+                }
+            }
+            return respuesta;
+        }
     }
 }
