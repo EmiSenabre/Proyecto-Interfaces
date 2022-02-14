@@ -28,6 +28,7 @@ namespace Proyecto_Interfaces
             {
                 Control control = new Control();
                 string respuesta = control.ctrlRegistro(usuario);
+                label4.Text = respuesta;
 
                 if (respuesta.Length > 0)
                 {

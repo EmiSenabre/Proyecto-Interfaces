@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Proyecto_Interfaces
 {
-    public partial class Inicio : Form
+    public partial class UserControl1 : UserControl
     {
-        public Inicio()
+        public UserControl1()
         {
             InitializeComponent();
-        }
-
-        private void btnAñadir_Click(object sender, EventArgs e)
-        {
-            Agregar agrega = new Agregar();
-            agrega.ShowDialog();
         }
     }
 }

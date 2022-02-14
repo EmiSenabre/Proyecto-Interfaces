@@ -59,7 +59,7 @@ namespace Proyecto_Interfaces
                 {
                     if (datosUsuario.Contraseña != contraseña)
                     {
-                        respuesta = "El usuaro y/o contraseña no coinciden";
+                        respuesta = "El usuario y/o contraseña no coinciden";
                     }
                 }
             }
