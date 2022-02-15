@@ -15,16 +15,18 @@ namespace Proyecto_Interfaces
 {
     public partial class Registro : Form
     {
-        public Registro()
+        FormGeneralRegistro form;
+        public Registro(FormGeneralRegistro form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
             
-            Registrar registra = new Registrar();
-            registra.ShowDialog();
+            Registrar registra = new Registrar(form);
+            form.openForm(registra);
 
         }
 
@@ -43,9 +45,9 @@ namespace Proyecto_Interfaces
                 }
                 else
                 {
-                    Inicio inicio = new Inicio();
-                    inicio.Visible = true;
-                    this.Visible = false;
+                    FormGeneral general = new FormGeneral();
+                    general.Visible = true;
+                    form.Visible = false;
                 }
             }catch(Exception ex)
             {

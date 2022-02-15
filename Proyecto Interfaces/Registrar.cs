@@ -12,9 +12,11 @@ namespace Proyecto_Interfaces
 {
     public partial class Registrar : Form
     {
-        public Registrar()
+        FormGeneralRegistro form;
+        public Registrar(FormGeneralRegistro form)
         {
             InitializeComponent();
+            this.form = form;
         }
 
         private void btnRegistarse_Click(object sender, EventArgs e)
@@ -28,7 +30,6 @@ namespace Proyecto_Interfaces
             {
                 Control control = new Control();
                 string respuesta = control.ctrlRegistro(usuario);
-                label4.Text = respuesta;
 
                 if (respuesta.Length > 0)
                 {
@@ -37,11 +38,19 @@ namespace Proyecto_Interfaces
                 else
                 {
                     MessageBox.Show("Usuario registrado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Registro registro = new Registro(form);
+                    form.openForm(registro);
                 }
             }catch(Exception ex)
             {
                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Registro registro = new Registro(form);
+            form.openForm(registro);
         }
     }
 }

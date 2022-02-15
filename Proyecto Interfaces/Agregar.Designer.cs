@@ -38,21 +38,21 @@
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.pbImage = new System.Windows.Forms.PictureBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.txtDirector = new System.Windows.Forms.TextBox();
             this.txtReparto = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.nAño = new System.Windows.Forms.NumericUpDown();
-            this.nPuntuacion = new System.Windows.Forms.NumericUpDown();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            this.pbImage = new System.Windows.Forms.PictureBox();
+            this.nPuntuacion = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.nAño)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPuntuacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nPuntuacion)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,15 +134,6 @@
             this.label8.TabIndex = 9;
             this.label8.Text = "Descripción:";
             // 
-            // pbImage
-            // 
-            this.pbImage.Location = new System.Drawing.Point(115, 98);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(100, 110);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImage.TabIndex = 10;
-            this.pbImage.TabStop = false;
-            // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.Location = new System.Drawing.Point(236, 98);
@@ -196,24 +187,6 @@
             0,
             0});
             // 
-            // nPuntuacion
-            // 
-            this.nPuntuacion.DecimalPlaces = 1;
-            this.nPuntuacion.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.nPuntuacion.Location = new System.Drawing.Point(589, 98);
-            this.nPuntuacion.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.nPuntuacion.Name = "nPuntuacion";
-            this.nPuntuacion.Size = new System.Drawing.Size(120, 20);
-            this.nPuntuacion.TabIndex = 17;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(501, 382);
@@ -232,6 +205,7 @@
             this.btnCancelar.TabIndex = 19;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // cbCategoria
             // 
@@ -257,15 +231,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // pbImage
+            // 
+            this.pbImage.Location = new System.Drawing.Point(115, 98);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(100, 110);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImage.TabIndex = 10;
+            this.pbImage.TabStop = false;
+            // 
+            // nPuntuacion
+            // 
+            this.nPuntuacion.Location = new System.Drawing.Point(589, 98);
+            this.nPuntuacion.Name = "nPuntuacion";
+            this.nPuntuacion.Size = new System.Drawing.Size(120, 20);
+            this.nPuntuacion.TabIndex = 21;
+            // 
             // Agregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.nPuntuacion);
             this.Controls.Add(this.cbCategoria);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.nPuntuacion);
             this.Controls.Add(this.nAño);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.txtReparto);
@@ -281,12 +271,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Agregar";
             this.Text = "Agregar";
-            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nAño)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nPuntuacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nPuntuacion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,10 +300,10 @@
         private System.Windows.Forms.TextBox txtReparto;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.NumericUpDown nAño;
-        private System.Windows.Forms.NumericUpDown nPuntuacion;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.NumericUpDown nPuntuacion;
     }
 }

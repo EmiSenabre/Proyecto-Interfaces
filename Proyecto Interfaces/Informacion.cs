@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,34 +11,31 @@ using System.Windows.Forms;
 
 namespace Proyecto_Interfaces
 {
-    public partial class UserControl1 : UserControl
+    public partial class Informacion : Form
     {
         Pelicula pelicula;
         FormGeneral general;
-        public UserControl1(Pelicula pelicula, FormGeneral general)
+        public Informacion(Pelicula pelicula, FormGeneral general)
         {
             InitializeComponent();
             this.pelicula = pelicula;
             this.general = general;
         }
 
-        private void UserControl1_Load(object sender, EventArgs e)
+        private void Informacion_Load(object sender, EventArgs e)
         {
             pbImage.Image = pelicula.Image;
             lTitulo.Text = pelicula.Name + "(" + pelicula.Year + ")";
-            LScore.Text = pelicula.Score + "/100";
-
-        }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-            Modificar modifica = new Modificar(pelicula,general);
-            general.openForm(modifica);
+            lScore.Text = "Puntuación: " +pelicula.Score + "/100";
+            lCategoria.Text = "Categoría: "+ pelicula.Category;
+            lDirector.Text = "Director: "+pelicula.Director;
+            lReparto.Text = "Reparto: "+pelicula.Actors;
+            lDescripcion.Text = "Descripcion: " + pelicula.Description;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Quiere borrar la pelicula?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("¿Quiere borrar la pelicula?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 string sql = "delete from peliculas where id=" + pelicula.Id;
                 MySqlConnection con = Conexion.getConexion();
@@ -53,15 +49,16 @@ namespace Proyecto_Interfaces
             }
         }
 
-        private void UserControl1_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+            Modificar modifica = new Modificar(pelicula,general);
+            general.openForm(modifica);
         }
 
-        private void lTitulo_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
-            Informacion informacion = new Informacion(pelicula, general);
-            general.openForm(informacion);
+            Inicio inicio = new Inicio(general);
+            general.openForm(inicio);
         }
     }
 }

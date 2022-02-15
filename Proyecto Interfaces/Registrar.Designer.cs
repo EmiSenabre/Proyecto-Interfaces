@@ -35,7 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtConfimarCon = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegistarse
@@ -96,21 +96,22 @@
             this.txtConfimarCon.Size = new System.Drawing.Size(100, 20);
             this.txtConfimarCon.TabIndex = 12;
             // 
-            // label4
+            // btnCancelar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(551, 159);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "label4";
+            this.btnCancelar.Location = new System.Drawing.Point(329, 291);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.txtConfimarCon);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnRegistarse);
@@ -118,6 +119,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Registrar";
             this.Text = "Registrar";
             this.ResumeLayout(false);
@@ -134,6 +136,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtConfimarCon;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

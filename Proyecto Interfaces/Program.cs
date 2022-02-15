@@ -16,7 +16,7 @@ namespace Proyecto_Interfaces
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Registro());
+            Application.Run(new FormGeneralRegistro());
         }
     }
 }
