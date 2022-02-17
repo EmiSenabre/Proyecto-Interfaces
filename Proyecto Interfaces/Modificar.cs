@@ -17,11 +17,13 @@ namespace Proyecto_Interfaces
     {
         Pelicula pelicula;
         FormGeneral general;
-        public Modificar(Pelicula pelicula, FormGeneral general)
+        int id;
+        public Modificar(Pelicula pelicula, FormGeneral general, int id)
         {
             InitializeComponent();
             this.pelicula = pelicula;
             this.general = general;
+            this.id = id;
         }
 
         private void Modificar_Load(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace Proyecto_Interfaces
                 //{
                 //MessageBox.Show("Error al guardar la imagen" + ex.Message);
                 //}
-                Inicio inicio = new Inicio(general);
+                Inicio inicio = new Inicio(general,id);
                 inicio.Visible = true;
             }
         }
@@ -132,7 +134,7 @@ namespace Proyecto_Interfaces
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio(general);
+            Inicio inicio = new Inicio(general,id);
             general.openForm(inicio);
         }
     }

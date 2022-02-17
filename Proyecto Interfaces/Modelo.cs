@@ -18,7 +18,7 @@ namespace Proyecto_Interfaces
             con.Open();
 
             MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "insert into usuarios(nombre,contraseña) values (@nombre,@contraseña)";
+            cmd.CommandText = "insert into usuarios(nombre,password) values (@nombre,@contraseña)";
             cmd.Parameters.AddWithValue("@nombre", usuario.Nombre);
             cmd.Parameters.AddWithValue("@contraseña",usuario.Contraseña);
             
@@ -55,7 +55,7 @@ namespace Proyecto_Interfaces
             con.Open();
 
             MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select id, nombre, contraseña from usuarios where nombre like @nombre";
+            cmd.CommandText = "select id, nombre, password from usuarios where nombre like @nombre";
             cmd.Parameters.AddWithValue("@nombre", usuario);
 
             reader = cmd.ExecuteReader();
@@ -67,7 +67,7 @@ namespace Proyecto_Interfaces
                 usr = new Usuario();
                 usr.Id = int.Parse(reader["id"].ToString());
                 usr.Nombre = reader["nombre"].ToString();
-                usr.Contraseña = reader["contraseña"].ToString();
+                usr.Contraseña = reader["password"].ToString();
             }
             return usr;
         }

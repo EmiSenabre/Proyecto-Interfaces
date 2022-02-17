@@ -35,6 +35,7 @@
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnInicio = new System.Windows.Forms.Button();
+            this.cbFavorito = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnAñadir
@@ -104,11 +105,23 @@
             this.btnInicio.UseVisualStyleBackColor = true;
             this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
+            // cbFavorito
+            // 
+            this.cbFavorito.AutoSize = true;
+            this.cbFavorito.Location = new System.Drawing.Point(289, 31);
+            this.cbFavorito.Name = "cbFavorito";
+            this.cbFavorito.Size = new System.Drawing.Size(64, 17);
+            this.cbFavorito.TabIndex = 8;
+            this.cbFavorito.Text = "Favorito";
+            this.cbFavorito.UseVisualStyleBackColor = true;
+            this.cbFavorito.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.cbFavorito);
             this.Controls.Add(this.btnInicio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBusqueda);
@@ -133,5 +146,6 @@
         private System.Windows.Forms.TextBox txtBusqueda;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnInicio;
+        private System.Windows.Forms.CheckBox cbFavorito;
     }
 }

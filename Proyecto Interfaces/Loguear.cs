@@ -45,7 +45,18 @@ namespace Proyecto_Interfaces
                 }
                 else
                 {
-                    FormGeneral general = new FormGeneral();
+                    
+                    MySqlConnection con = Conexion.getConexion();
+                    con.Open();
+
+
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText= "SELECT id from usuarios where nombre like @nombre";
+                    cmd.Parameters.AddWithValue("@nombre",nombre);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    reader.Read();
+                    int id = int.Parse(reader["id"].ToString());
+                    FormGeneral general = new FormGeneral(id);
                     general.Visible = true;
                     form.Visible = false;
                 }

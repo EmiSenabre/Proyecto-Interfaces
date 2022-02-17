@@ -12,14 +12,16 @@ namespace Proyecto_Interfaces
 {
     public partial class FormGeneral : Form
     {
-        public FormGeneral()
+        int id;
+        public FormGeneral(int id)
         {
             InitializeComponent();
+            this.id = id;
         }
 
         private void FormGeneral_Load(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio(this);
+            Inicio inicio = new Inicio(this, id);
             openForm(inicio);
         }
         public Form activeForm = null;

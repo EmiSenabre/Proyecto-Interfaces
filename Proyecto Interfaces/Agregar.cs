@@ -16,10 +16,12 @@ namespace Proyecto_Interfaces
     public partial class Agregar : Form
     {
         FormGeneral general;
-        public Agregar(FormGeneral general)
+        int id;
+        public Agregar(FormGeneral general, int id)
         {
             InitializeComponent();
             this.general = general;
+            this.id = id;
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -57,7 +59,7 @@ namespace Proyecto_Interfaces
                 //{
                 //MessageBox.Show("Error al guardar la imagen" + ex.Message);
                 //}
-                Inicio inicio = new Inicio(general);
+                Inicio inicio = new Inicio(general,id);
                 general.openForm(inicio);
 
             }
@@ -111,7 +113,7 @@ namespace Proyecto_Interfaces
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio(general);
+            Inicio inicio = new Inicio(general,id);
             general.openForm(inicio);
         }
     }

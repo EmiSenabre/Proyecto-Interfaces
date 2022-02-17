@@ -33,6 +33,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
+            this.cbFavorito = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,10 +87,23 @@
             this.pbImage.TabIndex = 0;
             this.pbImage.TabStop = false;
             // 
+            // cbFavorito
+            // 
+            this.cbFavorito.AutoSize = true;
+            this.cbFavorito.Location = new System.Drawing.Point(530, 53);
+            this.cbFavorito.Name = "cbFavorito";
+            this.cbFavorito.Size = new System.Drawing.Size(64, 17);
+            this.cbFavorito.TabIndex = 7;
+            this.cbFavorito.Text = "Favorito";
+            this.cbFavorito.UseVisualStyleBackColor = true;
+            this.cbFavorito.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.cbFavorito);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.LScore);
@@ -99,6 +113,8 @@
             this.Size = new System.Drawing.Size(830, 125);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.Click += new System.EventHandler(this.UserControl1_Click);
+            this.MouseLeave += new System.EventHandler(this.UserControl1_MouseLeave);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.UserControl1_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -112,5 +128,6 @@
         private System.Windows.Forms.Label LScore;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.CheckBox cbFavorito;
     }
 }

@@ -15,11 +15,13 @@ namespace Proyecto_Interfaces
     {
         Pelicula pelicula;
         FormGeneral general;
-        public Informacion(Pelicula pelicula, FormGeneral general)
+        int id;
+        public Informacion(Pelicula pelicula, FormGeneral general, int id)
         {
             InitializeComponent();
             this.pelicula = pelicula;
             this.general = general;
+            this.id = id;
         }
 
         private void Informacion_Load(object sender, EventArgs e)
@@ -44,20 +46,20 @@ namespace Proyecto_Interfaces
 
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 cmd.ExecuteReader();
-                Inicio inicio = new Inicio(general);
+                Inicio inicio = new Inicio(general,id);
                 general.openForm(inicio);
             }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Modificar modifica = new Modificar(pelicula,general);
+            Modificar modifica = new Modificar(pelicula,general,id);
             general.openForm(modifica);
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            Inicio inicio = new Inicio(general);
+            Inicio inicio = new Inicio(general,id);
             general.openForm(inicio);
         }
     }
