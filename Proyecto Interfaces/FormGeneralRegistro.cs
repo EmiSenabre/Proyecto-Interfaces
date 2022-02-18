@@ -17,7 +17,7 @@ namespace Proyecto_Interfaces
             InitializeComponent();
         }
 
-        //Funcion para cargar en el panel el formulario registro
+        ///Funcion para cargar en el panel el formulario registro
         private void FormGeneralRegistro_Load(object sender, EventArgs e)
         {
             Registro registro = new Registro(this);
@@ -26,7 +26,7 @@ namespace Proyecto_Interfaces
 
         public Form activeForm = null;
 
-        //Funcion para cargar formularios en un panel
+        ///Funcion para cargar formularios en un panel
         public void openForm(Form form)
         {
             if (activeForm != null)

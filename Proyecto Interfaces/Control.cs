@@ -10,7 +10,7 @@ namespace Proyecto_Interfaces
 {
     internal class Control
     {
-        //Funcion para registrar usuarios
+        ///Funcion para registrar usuarios
         public string ctrlRegistro(Usuario usuario) {
             Modelo modelo = new Modelo();
             string respuesta = "";
@@ -39,7 +39,7 @@ namespace Proyecto_Interfaces
             return respuesta;
         }
 
-        //Funcion para loguear usuarios
+        ///Funcion para loguear usuarios
         public string ctrlLogin(string nombre, string contraseña)
         {
             Modelo modelo = new Modelo();

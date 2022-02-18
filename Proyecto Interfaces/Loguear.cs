@@ -22,7 +22,7 @@ namespace Proyecto_Interfaces
             this.form = form;
         }
 
-        //Boton que abre un formulario registrar
+        ///Boton que abre un formulario registrar
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
             
@@ -31,7 +31,7 @@ namespace Proyecto_Interfaces
 
         }
 
-        //Boton que sirve para loguear usuarios en la aplicacion y comprueba que los campos estan correctos
+        ///Boton que sirve para loguear usuarios en la aplicacion y comprueba que los campos estan correctos
         private void btnLogearse_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;

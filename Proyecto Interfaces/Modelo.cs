@@ -12,7 +12,7 @@ namespace Proyecto_Interfaces
 {
     internal class Modelo 
     {
-        //Funcion para registrar usuarios
+        ///Funcion para registrar usuarios
         public int registro(Usuario usuario)
         {
             try
@@ -35,7 +35,7 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Funcion para comprobar que no hay usuarios con el mismo nombre en la base de datos
+        ///Funcion para comprobar que no hay usuarios con el mismo nombre en la base de datos
         public bool existeUsuario(string usuario)
         {
             MySqlDataReader reader;
@@ -64,7 +64,7 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Funcion que comprueba si hay un usuario con ese nombre en la base de datos y si lo hay le pasa su informacion
+        ///Funcion que comprueba si hay un usuario con ese nombre en la base de datos y si lo hay le pasa su informacion
         public Usuario porUsuario(string usuario)
         {
             MySqlDataReader reader;

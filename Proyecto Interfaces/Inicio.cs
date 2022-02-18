@@ -23,7 +23,7 @@ namespace Proyecto_Interfaces
             this.id = id;
         }
 
-        //Boton para abrir un formulario agregar
+        ///Boton para abrir un formulario agregar
         private void btnAñadir_Click(object sender, EventArgs e)
         {
             Agregar agregar = new Agregar(general,id);
@@ -35,7 +35,7 @@ namespace Proyecto_Interfaces
 
         }
 
-        //Funcion para cargar todas las peliculas en el user controller y luego carga este mismo en un flow layout panel
+        ///Funcion para cargar todas las peliculas en el user controller y luego carga este mismo en un flow layout panel
         private void GetData()
         {
             string sql = "SELECT * from peliculas";
@@ -79,13 +79,13 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Funcion para cuando abrimos este formulario nos cargue la informacion
+        ///Funcion para cuando abrimos este formulario nos cargue la informacion
         private void Inicio_Load(object sender, EventArgs e)
         {
             GetData();
         }
 
-        //Funcion para cada vez que inserto una letra en busqueda me haga una busqueda con ese contenido en la base de datos y me lo cargue en el flow layout panel
+        ///Funcion para cada vez que inserto una letra en busqueda me haga una busqueda con ese contenido en la base de datos y me lo cargue en el flow layout panel
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
@@ -127,14 +127,14 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Para ir a inicio
+        ///Para ir a inicio
         private void btnInicio_Click(object sender, EventArgs e)
         {
             Inicio inicio = new Inicio(general,id);
             general.openForm(inicio);
         }
         
-        //Funcion para ver las peliculas favoritas marcadas por el usuario
+        ///Funcion para ver las peliculas favoritas marcadas por el usuario
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (cbFavorito.Checked)
@@ -221,7 +221,7 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Funcion para desloguear en la aplicacion
+        ///Funcion para desloguear en la aplicacion
         private void btnSalir_Click(object sender, EventArgs e)
         {
             FormGeneralRegistro formGeneralRegistro = new FormGeneralRegistro();

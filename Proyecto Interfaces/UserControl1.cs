@@ -25,7 +25,7 @@ namespace Proyecto_Interfaces
             this.id = id;
         }
 
-        //Funcion que carga los datos de la pelicula
+        ///Funcion que carga los datos de la pelicula
         private void UserControl1_Load(object sender, EventArgs e)
         {
             pbImage.Image = pelicula.Image;
@@ -57,14 +57,14 @@ namespace Proyecto_Interfaces
 
         }
 
-        //Boton para abrir formulario modificar
+        ///Boton para abrir formulario modificar
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Modificar modifica = new Modificar(pelicula,general,id);
             general.openForm(modifica);
         }
 
-        //Boton para eliminar pelicula de la base de datos
+        ///Boton para eliminar pelicula de la base de datos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Quiere borrar la pelicula?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -87,14 +87,14 @@ namespace Proyecto_Interfaces
             }
         }
 
-        //Funcion para abrir formulario informacion
+        ///Funcion para abrir formulario informacion
         private void UserControl1_Click(object sender, EventArgs e)
         {
             Informacion informacion = new Informacion(pelicula, general, id);
             general.openForm(informacion);
         }
 
-        //Funcion para abrir formulario informacion
+        ///Funcion para abrir formulario informacion
         private void lTitulo_Click(object sender, EventArgs e)
         {
             Informacion informacion = new Informacion(pelicula, general,id);
