@@ -38,14 +38,16 @@
             this.btnInicio = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.lDescripcion = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lTitulo
             // 
             this.lTitulo.AutoSize = true;
             this.lTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitulo.Location = new System.Drawing.Point(87, 104);
+            this.lTitulo.Location = new System.Drawing.Point(166, 125);
             this.lTitulo.Name = "lTitulo";
             this.lTitulo.Size = new System.Drawing.Size(52, 18);
             this.lTitulo.TabIndex = 0;
@@ -53,9 +55,10 @@
             // 
             // lDirector
             // 
+            this.lDirector.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lDirector.AutoSize = true;
             this.lDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDirector.Location = new System.Drawing.Point(87, 298);
+            this.lDirector.Location = new System.Drawing.Point(166, 386);
             this.lDirector.Name = "lDirector";
             this.lDirector.Size = new System.Drawing.Size(44, 16);
             this.lDirector.TabIndex = 2;
@@ -63,9 +66,10 @@
             // 
             // lReparto
             // 
+            this.lReparto.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lReparto.AutoSize = true;
             this.lReparto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lReparto.Location = new System.Drawing.Point(87, 340);
+            this.lReparto.Location = new System.Drawing.Point(166, 424);
             this.lReparto.Name = "lReparto";
             this.lReparto.Size = new System.Drawing.Size(44, 16);
             this.lReparto.TabIndex = 3;
@@ -73,9 +77,10 @@
             // 
             // lCategoria
             // 
+            this.lCategoria.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lCategoria.AutoSize = true;
             this.lCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lCategoria.Location = new System.Drawing.Point(87, 387);
+            this.lCategoria.Location = new System.Drawing.Point(166, 451);
             this.lCategoria.Name = "lCategoria";
             this.lCategoria.Size = new System.Drawing.Size(44, 16);
             this.lCategoria.TabIndex = 4;
@@ -83,9 +88,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(780, 165);
+            this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnModificar.Location = new System.Drawing.Point(593, 331);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(133, 44);
+            this.btnModificar.Size = new System.Drawing.Size(133, 36);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar Película";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -93,9 +99,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(780, 225);
+            this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnEliminar.Location = new System.Drawing.Point(593, 373);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(133, 46);
+            this.btnEliminar.Size = new System.Drawing.Size(133, 43);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar Película";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -105,7 +112,7 @@
             // 
             this.lScore.AutoSize = true;
             this.lScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lScore.Location = new System.Drawing.Point(780, 125);
+            this.lScore.Location = new System.Drawing.Point(593, 125);
             this.lScore.Name = "lScore";
             this.lScore.Size = new System.Drawing.Size(44, 16);
             this.lScore.TabIndex = 7;
@@ -113,9 +120,10 @@
             // 
             // btnInicio
             // 
-            this.btnInicio.Location = new System.Drawing.Point(90, 27);
+            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnInicio.Location = new System.Drawing.Point(166, 42);
             this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(75, 23);
+            this.btnInicio.Size = new System.Drawing.Size(75, 37);
             this.btnInicio.TabIndex = 8;
             this.btnInicio.Text = "Inicio";
             this.btnInicio.UseVisualStyleBackColor = true;
@@ -123,9 +131,10 @@
             // 
             // pbImage
             // 
-            this.pbImage.Location = new System.Drawing.Point(81, 145);
+            this.pbImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbImage.Location = new System.Drawing.Point(166, 173);
             this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(123, 116);
+            this.pbImage.Size = new System.Drawing.Size(169, 152);
             this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage.TabIndex = 1;
             this.pbImage.TabStop = false;
@@ -134,34 +143,61 @@
             // 
             this.lDescripcion.AutoSize = true;
             this.lDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDescripcion.Location = new System.Drawing.Point(90, 423);
+            this.lDescripcion.Location = new System.Drawing.Point(166, 473);
             this.lDescripcion.Name = "lDescripcion";
             this.lDescripcion.Size = new System.Drawing.Size(44, 16);
             this.lDescripcion.TabIndex = 9;
             this.lDescripcion.Text = "label1";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.17064F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.36111F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 41.26984F));
+            this.tableLayoutPanel1.Controls.Add(this.btnInicio, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lDescripcion, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lTitulo, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnEliminar, 3, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lReparto, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.lScore, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lDirector, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.pbImage, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnModificar, 3, 5);
+            this.tableLayoutPanel1.Controls.Add(this.lCategoria, 1, 8);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.984798F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.701187F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.664884F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.02139F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.16399F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.486631F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.734403F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.634581F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.991087F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.32977F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 561);
+            this.tableLayoutPanel1.TabIndex = 10;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // Informacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 561);
-            this.Controls.Add(this.lDescripcion);
-            this.Controls.Add(this.btnInicio);
-            this.Controls.Add(this.lScore);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnModificar);
-            this.Controls.Add(this.lCategoria);
-            this.Controls.Add(this.lReparto);
-            this.Controls.Add(this.lDirector);
-            this.Controls.Add(this.pbImage);
-            this.Controls.Add(this.lTitulo);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Informacion";
             this.Text = "Informacion";
             this.Load += new System.EventHandler(this.Informacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -177,5 +213,6 @@
         private System.Windows.Forms.Label lScore;
         private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Label lDescripcion;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

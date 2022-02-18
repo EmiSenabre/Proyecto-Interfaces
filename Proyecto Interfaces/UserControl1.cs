@@ -134,5 +134,10 @@ namespace Proyecto_Interfaces
 
             }
         }
+
+        private void lTitulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            BackColor = Color.Gray;
+        }
     }
 }

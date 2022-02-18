@@ -192,5 +192,12 @@ namespace Proyecto_Interfaces
                 }
             }
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            FormGeneralRegistro formGeneralRegistro = new FormGeneralRegistro();
+            formGeneralRegistro.Visible = true;
+            general.Visible = false;
+        }
     }
 }

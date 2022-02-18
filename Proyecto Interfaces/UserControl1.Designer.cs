@@ -34,6 +34,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.cbFavorito = new System.Windows.Forms.CheckBox();
+            this.lPuntuación = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,6 +48,7 @@
             this.lTitulo.TabIndex = 1;
             this.lTitulo.Text = "label1";
             this.lTitulo.Click += new System.EventHandler(this.lTitulo_Click);
+            this.lTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lTitulo_MouseMove);
             // 
             // LScore
             // 
@@ -98,11 +100,22 @@
             this.cbFavorito.UseVisualStyleBackColor = true;
             this.cbFavorito.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // lPuntuación
+            // 
+            this.lPuntuación.AutoSize = true;
+            this.lPuntuación.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPuntuación.Location = new System.Drawing.Point(612, 26);
+            this.lPuntuación.Name = "lPuntuación";
+            this.lPuntuación.Size = new System.Drawing.Size(87, 16);
+            this.lPuntuación.TabIndex = 8;
+            this.lPuntuación.Text = "Puntuación:";
+            // 
             // UserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.lPuntuación);
             this.Controls.Add(this.cbFavorito);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -129,5 +142,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.CheckBox cbFavorito;
+        private System.Windows.Forms.Label lPuntuación;
     }
 }

@@ -116,5 +116,10 @@ namespace Proyecto_Interfaces
             Inicio inicio = new Inicio(general,id);
             general.openForm(inicio);
         }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

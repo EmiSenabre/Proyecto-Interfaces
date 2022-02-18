@@ -69,7 +69,7 @@ namespace Proyecto_Interfaces
                 //MessageBox.Show("Error al guardar la imagen" + ex.Message);
                 //}
                 Inicio inicio = new Inicio(general,id);
-                inicio.Visible = true;
+                general.openForm(inicio);
             }
         }
 
