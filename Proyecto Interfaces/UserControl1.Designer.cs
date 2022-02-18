@@ -28,91 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
             this.lTitulo = new System.Windows.Forms.Label();
             this.LScore = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.pbImage = new System.Windows.Forms.PictureBox();
             this.cbFavorito = new System.Windows.Forms.CheckBox();
             this.lPuntuación = new System.Windows.Forms.Label();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lTitulo
             // 
-            this.lTitulo.AutoSize = true;
-            this.lTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lTitulo.Location = new System.Drawing.Point(141, 54);
+            resources.ApplyResources(this.lTitulo, "lTitulo");
             this.lTitulo.Name = "lTitulo";
-            this.lTitulo.Size = new System.Drawing.Size(57, 20);
-            this.lTitulo.TabIndex = 1;
-            this.lTitulo.Text = "label1";
             this.lTitulo.Click += new System.EventHandler(this.lTitulo_Click);
             this.lTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lTitulo_MouseMove);
             // 
             // LScore
             // 
-            this.LScore.AutoSize = true;
-            this.LScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LScore.Location = new System.Drawing.Point(629, 54);
+            resources.ApplyResources(this.LScore, "LScore");
             this.LScore.Name = "LScore";
-            this.LScore.Size = new System.Drawing.Size(44, 16);
-            this.LScore.TabIndex = 2;
-            this.LScore.Text = "label2";
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(730, 26);
+            resources.ApplyResources(this.btnModificar, "btnModificar");
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
-            this.btnModificar.TabIndex = 5;
-            this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(730, 71);
+            resources.ApplyResources(this.btnEliminar, "btnEliminar");
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 22);
-            this.btnEliminar.TabIndex = 6;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // pbImage
-            // 
-            this.pbImage.Location = new System.Drawing.Point(12, 12);
-            this.pbImage.Name = "pbImage";
-            this.pbImage.Size = new System.Drawing.Size(106, 104);
-            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbImage.TabIndex = 0;
-            this.pbImage.TabStop = false;
-            // 
             // cbFavorito
             // 
-            this.cbFavorito.AutoSize = true;
-            this.cbFavorito.Location = new System.Drawing.Point(530, 53);
+            resources.ApplyResources(this.cbFavorito, "cbFavorito");
             this.cbFavorito.Name = "cbFavorito";
-            this.cbFavorito.Size = new System.Drawing.Size(64, 17);
-            this.cbFavorito.TabIndex = 7;
-            this.cbFavorito.Text = "Favorito";
             this.cbFavorito.UseVisualStyleBackColor = true;
             this.cbFavorito.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // lPuntuación
             // 
-            this.lPuntuación.AutoSize = true;
-            this.lPuntuación.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lPuntuación.Location = new System.Drawing.Point(612, 26);
+            resources.ApplyResources(this.lPuntuación, "lPuntuación");
             this.lPuntuación.Name = "lPuntuación";
-            this.lPuntuación.Size = new System.Drawing.Size(87, 16);
-            this.lPuntuación.TabIndex = 8;
-            this.lPuntuación.Text = "Puntuación:";
+            // 
+            // pbImage
+            // 
+            resources.ApplyResources(this.pbImage, "pbImage");
+            this.pbImage.Name = "pbImage";
+            this.pbImage.TabStop = false;
             // 
             // UserControl1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lPuntuación);
@@ -123,7 +96,6 @@
             this.Controls.Add(this.lTitulo);
             this.Controls.Add(this.pbImage);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(830, 125);
             this.Load += new System.EventHandler(this.UserControl1_Load);
             this.Click += new System.EventHandler(this.UserControl1_Click);
             this.MouseLeave += new System.EventHandler(this.UserControl1_MouseLeave);

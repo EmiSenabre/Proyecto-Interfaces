@@ -19,12 +19,15 @@ namespace Proyecto_Interfaces
             this.id = id;
         }
 
+        //Funcion para cargar en el panel el formulario inicio
         private void FormGeneral_Load(object sender, EventArgs e)
         {
             Inicio inicio = new Inicio(this, id);
             openForm(inicio);
         }
         public Form activeForm = null;
+
+        //Funcion para cargar formularios en un panel
         public void openForm(Form form)
         {
             if (activeForm != null)

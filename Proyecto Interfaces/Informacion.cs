@@ -24,6 +24,7 @@ namespace Proyecto_Interfaces
             this.id = id;
         }
 
+        //Funcion para cargar la pelicula 
         private void Informacion_Load(object sender, EventArgs e)
         {
             pbImage.Image = pelicula.Image;
@@ -35,28 +36,37 @@ namespace Proyecto_Interfaces
             lDescripcion.Text = "Descripcion: " + pelicula.Description;
         }
 
+        //Boton para eliminar una pelicula de la base de datos
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("¿Quiere borrar la pelicula?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 string sql = "delete from peliculas where id=" + pelicula.Id;
-                MySqlConnection con = Conexion.getConexion();
-                con.Open();
+                try
+                {
+                    MySqlConnection con = Conexion.getConexion();
+                    con.Open();
 
 
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                cmd.ExecuteReader();
-                Inicio inicio = new Inicio(general,id);
-                general.openForm(inicio);
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.ExecuteReader();
+                    Inicio inicio = new Inicio(general, id);
+                    general.openForm(inicio);
+                }catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
+        //Boton para abrir un formulario modificar
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Modificar modifica = new Modificar(pelicula,general,id);
             general.openForm(modifica);
         }
 
+        //Boton para abrir un formulario inicio
         private void btnInicio_Click(object sender, EventArgs e)
         {
             Inicio inicio = new Inicio(general,id);

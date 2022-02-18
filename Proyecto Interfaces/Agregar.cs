@@ -24,6 +24,7 @@ namespace Proyecto_Interfaces
             this.id = id;
         }
 
+        //Funcion para boton seleccionar en el que seleccionariamos una imagen
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofdSeleccionar = new OpenFileDialog();
@@ -37,6 +38,7 @@ namespace Proyecto_Interfaces
             }
         }
 
+        //Funcion para boton guardar donde nos guardaria la pelicula en la base de datos si todos los campos son correctos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             BorrarMensajeError();
@@ -45,26 +47,32 @@ namespace Proyecto_Interfaces
                 MemoryStream ms = new MemoryStream();
                 pbImage.Image.Save(ms, ImageFormat.Png);
                 byte[] bytes = ms.ToArray();
-
-                MySqlConnection con = Conexion.getConexion();
-                con.Open();
-                //try
-                //{
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO peliculas (name,director,category,actors,year,score,image,description) VALUES ('" + txtTitulo.Text + "','" + txtDirector.Text + "','" + cbCategoria.Text + "','" + txtReparto.Text + "','" + nAño.Value + "','" + nPuntuacion.Value + "',@image,'" + txtDescripcion.Text + "')";
-                cmd.Parameters.AddWithValue("image", bytes);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Pelicula guardada");
-                //}catch (MySqlException ex)
-                //{
-                //MessageBox.Show("Error al guardar la imagen" + ex.Message);
-                //}
-                Inicio inicio = new Inicio(general,id);
-                general.openForm(inicio);
+                try
+                {
+                    MySqlConnection con = Conexion.getConexion();
+                    con.Open();
+                    //try
+                    //{
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "INSERT INTO peliculas (name,director,category,actors,year,score,image,description) VALUES ('" + txtTitulo.Text + "','" + txtDirector.Text + "','" + cbCategoria.Text + "','" + txtReparto.Text + "','" + nAño.Value + "','" + nPuntuacion.Value + "',@image,'" + txtDescripcion.Text + "')";
+                    cmd.Parameters.AddWithValue("image", bytes);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Pelicula guardada");
+                    //}catch (MySqlException ex)
+                    //{
+                    //MessageBox.Show("Error al guardar la imagen" + ex.Message);
+                    //}
+                    Inicio inicio = new Inicio(general, id);
+                    general.openForm(inicio);
+                }catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
             }
         }
 
+        //Funcion para validar que todos los campos estan rellenados correctamente
         private bool ValidarCampos()
         {
             bool ok = true;
@@ -101,6 +109,7 @@ namespace Proyecto_Interfaces
             return ok;
         }
 
+        //Funcion para borrar el errorProvider
         private void BorrarMensajeError()
         {
             errorProvider1.SetError(txtDescripcion, "");
@@ -111,6 +120,7 @@ namespace Proyecto_Interfaces
             errorProvider1.SetError(pbImage, "");
         }
 
+        //Funcion para cancelar la creacion de la pelicula y enviarte al inicio
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Inicio inicio = new Inicio(general,id);

@@ -62,7 +62,7 @@
             this.txtNombre.Location = new System.Drawing.Point(208, 139);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(136, 24);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtContraseña
             // 
@@ -70,14 +70,14 @@
             this.txtContraseña.Location = new System.Drawing.Point(208, 208);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(136, 24);
-            this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.TabIndex = 2;
             // 
             // btnLogearse
             // 
             this.btnLogearse.Location = new System.Drawing.Point(206, 282);
             this.btnLogearse.Name = "btnLogearse";
             this.btnLogearse.Size = new System.Drawing.Size(102, 34);
-            this.btnLogearse.TabIndex = 4;
+            this.btnLogearse.TabIndex = 3;
             this.btnLogearse.Text = "Iniciar Sesión";
             this.btnLogearse.UseVisualStyleBackColor = true;
             this.btnLogearse.Click += new System.EventHandler(this.btnLogearse_Click);
@@ -87,7 +87,7 @@
             this.btnRegistarse.Location = new System.Drawing.Point(342, 282);
             this.btnRegistarse.Name = "btnRegistarse";
             this.btnRegistarse.Size = new System.Drawing.Size(94, 33);
-            this.btnRegistarse.TabIndex = 5;
+            this.btnRegistarse.TabIndex = 4;
             this.btnRegistarse.Text = "Registrarse";
             this.btnRegistarse.UseVisualStyleBackColor = true;
             this.btnRegistarse.Click += new System.EventHandler(this.btnRegistarse_Click);

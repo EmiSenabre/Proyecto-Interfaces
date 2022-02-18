@@ -22,6 +22,7 @@ namespace Proyecto_Interfaces
             this.form = form;
         }
 
+        //Boton que abre un formulario registrar
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
             
@@ -30,6 +31,7 @@ namespace Proyecto_Interfaces
 
         }
 
+        //Boton que sirve para loguear usuarios en la aplicacion y comprueba que los campos estan correctos
         private void btnLogearse_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text;
@@ -45,20 +47,23 @@ namespace Proyecto_Interfaces
                 }
                 else
                 {
-                    
-                    MySqlConnection con = Conexion.getConexion();
-                    con.Open();
+                    try
+                    {
+                        MySqlConnection con = Conexion.getConexion();
+                        con.Open();
 
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText= "SELECT id from usuarios where nombre like @nombre";
-                    cmd.Parameters.AddWithValue("@nombre",nombre);
-                    MySqlDataReader reader = cmd.ExecuteReader();
-                    reader.Read();
-                    int id = int.Parse(reader["id"].ToString());
-                    FormGeneral general = new FormGeneral(id);
-                    general.Visible = true;
-                    form.Visible = false;
+                        MySqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "SELECT id from usuarios where nombre like @nombre";
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                        MySqlDataReader reader = cmd.ExecuteReader();
+                        reader.Read();
+                        int id = int.Parse(reader["id"].ToString());
+                        FormGeneral general = new FormGeneral(id);
+                        general.Visible = true;
+                        form.Visible = false;
+                    }catch (Exception ex)
+                    { MessageBox.Show(ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information); }
                 }
             }catch(Exception ex)
             {

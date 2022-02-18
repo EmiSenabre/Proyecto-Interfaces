@@ -19,6 +19,7 @@ namespace Proyecto_Interfaces
             this.form = form;
         }
 
+        //Funcion para registrar usuarios en la base de datos y comprueba que no haya otro usuario con el mismo nombre y que las contraseñas coiciden
         private void btnRegistarse_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
@@ -47,6 +48,7 @@ namespace Proyecto_Interfaces
             }
         }
 
+        //Boton que cancela la accion de registrar y abre un formulario de logueo
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Registro registro = new Registro(form);
